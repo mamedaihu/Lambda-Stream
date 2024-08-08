@@ -14,6 +14,10 @@ public class Chapter10 {
 	        list.add(new Task(LocalDate.of(2021, 8, 10), "散髪に行く", false));
 	        list.add(new Task(LocalDate.of(2021, 11, 9), "スクールの課題を解く", false));
 	        // 以下記述
+	        list.stream() //ストリーム生成
+	        	.filter(t -> t.isDone() == false)
+	        	.sorted()
+	        	.forEach(System.out::println);
 	        
 	    }
 
