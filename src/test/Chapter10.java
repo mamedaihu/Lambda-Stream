@@ -2,6 +2,7 @@ package test;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class Chapter10 {
@@ -22,7 +23,7 @@ public class Chapter10 {
 	        
 	        list.stream() //ストリーム生成
 	        	.filter(t -> t.isDone() == false)
-	        	.sorted()
+	        	.sorted(Comparator.comparing(Task::getDate))
 	        	.forEach(System.out::println);
 	        
 	    }
