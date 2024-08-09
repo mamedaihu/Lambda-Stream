@@ -2,7 +2,6 @@ package test;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 
 public class Chapter10 {
@@ -20,10 +19,10 @@ public class Chapter10 {
 	       		
 	       	long count = list.stream().filter(t -> t.isDone() == false).count();
 	        System.out.println("未完了のタスクの個数は" + count);
-	        
+	        System.out.println("【未完了のタスクを昇順に並び替えて一覧表示】");
 	        list.stream() //ストリーム生成
 	        	.filter(t -> t.isDone() == false)
-	        	.sorted(Comparator.comparing(Task::getDate))
+	        	.sorted()
 	        	.forEach(System.out::println);
 	        
 	    }
